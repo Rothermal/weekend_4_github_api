@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Fourth Weekend Challenge</title>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <script src="assets/scripts/gitService.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body ng-controller="MainController">
+<h1>{{title}}</h1>
+<button ng-click="refresh()" class="btn-block btn-success">Show some Current Repos</button>
+    <div ng-repeat="data in git.data.results.data" class=" well col-md-4">
+        <p class="name">{{data.repo.name}}</p>
+        <a href="https://github.com/{{data.repo.name}}">Go to Repo</a>
+        <p>Unique id: {{data.repo.id}}</p>
+    </div>
+
+</body>
+</html>
